@@ -16,5 +16,8 @@ mongoose.connect('mongodb+srv://vennela:vennela@cluster0-2wzvk.mongodb.net/test?
 const apiRouter = require('./routes/routes');
 server.use('/api', apiRouter);
 
+server.get('/', (req, res) => {
+    res.send('HEY!')
+  }) 
 var port = process.env.port || 3000;
 server.listen(port);
