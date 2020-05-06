@@ -8,7 +8,7 @@ server.use(cors());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: false}));
 
-mongoose.connect('mongodb+srv://vennela:vennela@cluster0-2wzvk.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true }, { useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://vennela:vennela@cluster0-2wzvk.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true },)
   .then(() => console.log('connection successful'))
   .catch((err) => console.log(err));
 
