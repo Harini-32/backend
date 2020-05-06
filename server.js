@@ -9,12 +9,12 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: false}));
 
 mongoose.connect('mongodb+srv://vennela:vennela@cluster0-2wzvk.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('connection successful'))
-  .catch((err) => console.log(err));
+ 
+.then(() => console.log('connection successful'))
+.catch((err) => console.log(err));
 
 const apiRouter = require('./routes/routes');
 server.use('/api', apiRouter);
 
-server.listen(3000, () => {
-  console.log('Server 3000 started!')
-});
+var port = process.env.port || 3000;
+server.listen(port);
